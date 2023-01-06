@@ -7,7 +7,12 @@ function validEnvoi() {
         alert("L'email doit être rempli"); // On affiche un message
     } 
     else {
-        window.document.querySelector("#form_contact").submit(); // On peut envoyer
+        let question = "Souhaitez-vous réellement utiliser l'adresse suivante : "
+                + window.document.querySelector("#i_email").value;
+        if (confirm(question)) {
+
+            window.document.querySelector("#form_contact").submit(); // On peut envoyer
+        }
     }
 }
 window.addEventListener("load", function () {
