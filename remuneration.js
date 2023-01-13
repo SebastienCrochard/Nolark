@@ -32,14 +32,16 @@ function comXS(nb){
 
 function comMulti(nb){
     const Multitec = 180;
-    const AxComMulti20 = 0.04;
-    const AxComMulti50 = 0.06;
-    const AxComMulti51 = 0.1;
+    let AxComMulti = [0.04, 0.06, 0.1];
+    let qte = [20, 50];
     let somme = 0;
-    if(nb-20 <= 20){
-        somme += nb*Multitec*AxComMulti20;
+    let i, j;
+    for (i = 1; i !== nb + 1; i++){
+        for (j = 0; j !== AxComMulti.length; j++){
+            if(qte[j] + 1 < nb < qte[j + 1]){
+                somme += Multitec * AxComMulti[j];
+            }
+        }
     }
-    else if(nb >= 21 && nb <= 50){
-        somme +=
-    }
+    return somme;
 }
