@@ -1,21 +1,3 @@
-function gestionNbAccidents(nbAccidents) {
-    if (nbAccidents > 3) {
-        window.document.querySelector('#acacher').style.display = 'none';
-        // Si #txtTropAccidents n'existe pas, on le créé
-        if (!window.document.querySelector('#txtTropAccidents')) {
-            let elH3 = window.document.createElement('h3');
-            elH3.id = 'txtTropAccidents';
-            elH3.appendChild(window.document.createTextNode('Prime annuelle annulée, trop d\'accidents !'));
-            window.document.querySelector('#recueilinfos').appendChild(elH3);
-        }
-    } else {
-        window.document.querySelector('#acacher').style.display = 'block';
-        // Si #txtTropAccidents existe, on le supprime
-        if (window.document.querySelector('#txtTropAccidents')) {
-            window.document.querySelector('#txtTropAccidents').remove();
-        }
-    }
-}
 /**
  * Fonction qui retourne la prime de distance
  *
@@ -127,6 +109,12 @@ function gestionNbAccidents(nbAccidents, primeAnnuelleSansAccident, primeAnnuell
                 + primeAnnuelleSansAccident + ' € sans ' + nbAccidents
                 + ' accidents responsables...';
     }
+    if (nbAccidents >= 4){
+        elH2.innerHTML = 'Vous ne recevrez pas de prime due au nombre trop élevé d\'accidents. Gardez les yeux sur la route !';
+    }
+    window.document.querySelector("#btn_annuler").addEventListener("click", function(){
+        elH2.innerHTML = '';
+    });
 }
 /**
  * Fonction qui retourne un entier depuis une valeur prise dans le DOM et qui replace le
