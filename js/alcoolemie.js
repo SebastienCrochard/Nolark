@@ -99,3 +99,18 @@ function getString(id) {
     return window.document.querySelector(id).value;
 }
 
+function afficheAlcoolemie(){
+    let nbVerres = getInt('#num_verre');
+    let sexe = getString('#sexe input[type="radio"]:checked');
+    let poids = getInt('#num_poids');
+    let alcoolemie = getAlcoolemie(sexe, poids, nbVerres);
+    let amende = getAmende(alcoolemie);
+    let sanction = getSanction(alcoolemie);
+    let elH2 = window.document.querySelector('#alcool');
+    if (!elH2) {
+        elH2 = window.document.createElement('h2');
+        elH2.id = 'alcool';
+        window.document.querySelector('#recueilinfos').appendChild(elH2);
+    }
+    elH2.innerHTML = 'Votre sanction sera ' + sanction + ' et vous devrez payer une amende de ' + amende + ' €';
+}
