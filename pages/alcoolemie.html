@@ -13,7 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../css/styles.css" rel="stylesheet" type="text/css">
         <link href="../css/simulateur.css" rel="stylesheet" type="text/css">
-        <script src="../js/remuneration.js"></script>
+        <script src="../js/alcoolemie.js"></script>
         <link rel="icon" href="../favicon.ico">
     </head>
     <body>
@@ -52,8 +52,16 @@
                         <input type="number" name="num_verre" id="num_verre" min="0" max="50" value="0">
                     </p>
                     <p>
-                        <label for="nb_km">Nombre de kilomètres parcourus :</label>
-                        <input type="number" name="nb_km" id="nb_km" min="0" max="999999" value="0">
+                        <label for="sexe">Homme :</label>
+                        <input type="radio" name="sexe" id="sexe" value="homme">
+                    </p>
+                    <p>
+                        <label for="sexe">Femme :</label>
+                        <input type="radio" name="sexe" id="sexe" value="femme">
+                    </p>
+                    <p>
+                        <label for="num_poids">Votre poids en kg :</label>
+                        <input type="number" name="num_poids" id="num_poids" min="0" max="300" value="0">
                     </p>
                 </fieldset>
                 <p id="controles">
